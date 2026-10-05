@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>document.documentElement.className+=' js';</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Marketing Strategy &amp; Consultant in Pakistan | Abdul Rehman</title>
@@ -322,9 +323,12 @@ h3{font-size:1.28rem}
 .footer-grid ul a:hover{color:var(--emerald)}
 .footer-bottom{border-top:1px solid var(--line);padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-size:.87rem;color:var(--muted)}
 
-/* ---------- Reveal animation ---------- */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:none}
+/* ---------- Reveal animation (progressive enhancement: hidden only when JS runs) ---------- */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.visible{opacity:1;transform:none}
+@media print{
+  .reveal{opacity:1!important;transform:none!important;transition:none!important}
+}
 @media (prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
   .marquee-track{animation:none}
